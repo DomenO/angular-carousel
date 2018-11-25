@@ -11,7 +11,7 @@ This is a component that is used on the site [iconmagic.org](https://iconmagic.o
 - You can change the available attributes if needed
 
 ```html
-<app-carousel infinity="true" pointColor="red">
+<app-carousel infinity="true" pointColor="#3f51b5">
   <div class="carousel__item carousel__item_turquoise">One</div>
   <div class="carousel__item carousel__item_blue">Two</div>
   <div class="carousel__item carousel__item_green">Three</div>
