@@ -1,0 +1,56 @@
+.carousel {
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.carousel .carousel__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.carousel .carousel__item_red {
+  background-color: red;
+  color: white;
+}
+
+.carousel .carousel__item_blue {
+  background-color: blue;
+  color: white;
+}
+
+.carousel .carousel__item_green {
+  background-color: green;
+  color: white;
+}
+
+.carousel .carousel__item_yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.carousel .carousel__item_turquoise {
+  background-color: turquoise;
+  color: black;
+}
+
+.content {
+  display: flex; 
+  flex-direction: column;
+  width: 760px;
+  margin: 0 auto;
+}
+
+.description {
+  margin: 0 auto;
+  line-height: 64px;
+  font-size: 18px;  
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto;
+  width: 600px;
+}

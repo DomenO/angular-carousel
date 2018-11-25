@@ -1,0 +1,120 @@
+<div class="content">
+
+  <div class="header">
+    <h1>Angular-Carousel</h1>
+    <span>
+      This is a component that is used on the site <a href="https://iconmagic.org" target="_blink">iconmagic.org</a>.
+      The project can be viewed on <a href="http://domeno.github.io" target="_blink">GitHub</a>.
+      You can download the component <a href="assets/angular-carousel.zip" target="_blink">here</a>.
+    </span>
+  </div>
+
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <div class="description">
+    Attribute [infinity]:
+    <input type="radio" name="infinity" (click)="infinity = 1" checked>True
+    <input type="radio" name="infinity" (click)="infinity = 0">False
+  </div>
+
+  <div class="carousel">
+    <app-carousel [infinity]="infinity?true:false">
+      <div class="carousel__item carousel__item_turquoise">One</div>
+      <div class="carousel__item carousel__item_blue">Two</div>
+      <div class="carousel__item carousel__item_green">Three</div>
+      <div class="carousel__item carousel__item_yellow">Four</div>
+      <div class="carousel__item carousel__item_red">Five</div>
+    </app-carousel>
+  </div>
+
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <div class="description">
+    Attribute [arrows]:
+    <input type="radio" name="arrows" (click)="arrows = 'outside'" checked>outside
+    <input type="radio" name="arrows" (click)="arrows = 'inside'">inside
+    <input type="radio" name="arrows" (click)="arrows = 'none'">none
+  </div>
+
+  <div class="carousel">
+    <app-carousel [arrows]="arrows">
+      <div class="carousel__item carousel__item_turquoise">One</div>
+      <div class="carousel__item carousel__item_blue">Two</div>
+      <div class="carousel__item carousel__item_green">Three</div>
+      <div class="carousel__item carousel__item_yellow">Four</div>
+      <div class="carousel__item carousel__item_red">Five</div>
+    </app-carousel>
+  </div>
+
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <div class="description">
+    Attribute [timeMove]:
+    <input type="radio" name="timeMove" (click)="timeMove = 250">250ms
+    <input type="radio" name="timeMove" (click)="timeMove = 500" checked>500ms
+    <input type="radio" name="timeMove" (click)="timeMove = 1000">1000ms
+  </div>
+
+  <div class="carousel">
+    <app-carousel [timeMove]="timeMove">
+      <div class="carousel__item carousel__item_turquoise">One</div>
+      <div class="carousel__item carousel__item_blue">Two</div>
+      <div class="carousel__item carousel__item_green">Three</div>
+      <div class="carousel__item carousel__item_yellow">Four</div>
+      <div class="carousel__item carousel__item_red">Five</div>
+    </app-carousel>
+  </div>
+
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <div class="description">
+    Attribute [pointColor]:
+    <input type="radio" name="pointColor" (click)="pointColor = '#3f51b5'" checked>#3f51b5
+    <input type="radio" name="pointColor" (click)="pointColor = 'green'">green
+    <input type="radio" name="pointColor" (click)="pointColor = 'rgb(244, 64, 52)'">rgb(244, 64, 52)
+  </div>
+
+  <div class="carousel">
+    <app-carousel [pointColor]="pointColor">
+      <div class="carousel__item carousel__item_turquoise">One</div>
+      <div class="carousel__item carousel__item_blue">Two</div>
+      <div class="carousel__item carousel__item_green">Three</div>
+      <div class="carousel__item carousel__item_yellow">Four</div>
+      <div class="carousel__item carousel__item_red">Five</div>
+    </app-carousel>
+  </div>
+
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <div class="description">
+    Attribute [borderSwipe]:
+    <input type="radio" name="borderSwipe" (click)="borderSwipe = 0">0%
+    <input type="radio" name="borderSwipe" (click)="borderSwipe = 50" checked>50%
+    <input type="radio" name="borderSwipe" (click)="borderSwipe = 100">100%
+  </div>
+
+  <div class="carousel">
+    <app-carousel [borderSwipe]="borderSwipe">
+      <div class="carousel__item carousel__item_turquoise">One</div>
+      <div class="carousel__item carousel__item_blue">Two</div>
+      <div class="carousel__item carousel__item_green">Three</div>
+      <div class="carousel__item carousel__item_yellow">Four</div>
+      <div class="carousel__item carousel__item_red">Five</div>
+    </app-carousel>
+  </div>
+
+  <p></p>
+  <p></p>
+  <p></p>
+
+</div>
