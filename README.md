@@ -6,8 +6,21 @@ This is a component that is used on the site [iconmagic.org](https://iconmagic.o
 
 ## Usage:
 
-- Just copy the component into your project
+- Just copy the component into your project and import it
 
+```ts
+/* other imports*/
+import { CarouselComponent } from './ui/carousel';
+
+@NgModule({
+  declarations:[
+    /* other modules*/
+    CarouselComponent
+  ]
+})
+export class AppModule { }
+```
+- Add the HTML code to the place where you want to use it
 - You can change the available attributes if needed
 
 ```html
