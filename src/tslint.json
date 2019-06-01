@@ -1,6 +1,12 @@
 {
     "extends": "../tslint.json",
     "rules": {
+        "no-bitwise": false,
+        "radix": false,
+        "curly": [
+            true, 
+            "as-needed"
+        ],
         "directive-selector": [
             true,
             "attribute",

@@ -1,5 +1,5 @@
 <div class="main">
-  <div class="line">    
+  <div class="line">
 
     <div class="buttons" *ngIf="arrows == 'outside'">
       <div class="button button_left button_left-outside" (click)="arrowSwitchSlide(1)"></div>
@@ -12,8 +12,7 @@
     </div>
 
     <div class="viewer">
-      <div class="content" #content (mousedown)="onMouseDown($event)"
-                                    (touchstart)="onMouseDown($event)">
+      <div class="content" #content (mousedown)="onMouseDown($event)" (touchstart)="onMouseDown($event)">
         <ng-content></ng-content>
       </div>
     </div>
@@ -21,10 +20,8 @@
   </div>
 
   <div class="points">
-    <div class="points__item" (click)="pointerSwitchSlide(item.id)" 
-      [ngClass]="{points__item_selected: item.check}"
+    <div class="points__item" (click)="pointerSwitchSlide(item.id)" [ngClass]="{points__item_selected: item.check}"
       [ngStyle]="{'border-color': pointColor, 'background-color': item.check?pointColor:'inherit'}"
       *ngFor="let item of getInfoPointer()"></div>
-  </div>  
+  </div>
 </div>
-

@@ -9,7 +9,7 @@
 }
 
 .line {
-  display: flex;  
+  display: flex;
   flex-direction: row;
   height: 100%;
   position: relative;
@@ -20,7 +20,7 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 
 .content {
@@ -79,10 +79,6 @@
   width: 100%;
   height: 48px;
   align-items: center;
-}
-
-.points {
-
 }
 
 .points .points__item {
