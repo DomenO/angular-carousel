@@ -12,7 +12,7 @@ import {
 
 
 @Component({
-  selector: 'app-carousel',
+  selector: 'carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush

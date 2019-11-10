@@ -2,19 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CarouselComponent } from './carousel';
+import { CarouselModule } from './carousel';
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      CarouselComponent
-   ],
-   imports: [
-      BrowserModule
-   ],
-   providers: [],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    CarouselModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
