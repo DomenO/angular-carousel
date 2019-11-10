@@ -10,12 +10,12 @@ This is a component that is used on the site [iconmagic.org](https://iconmagic.o
 
 ```ts
 /* other imports*/
-import { CarouselComponent } from './ui/carousel';
+import { CarouselModule } from './ui/carousel';
 
 @NgModule({
-  declarations:[
+  imports: [
     /* other modules*/
-    CarouselComponent
+    CarouselModule
   ]
 })
 export class AppModule { }
