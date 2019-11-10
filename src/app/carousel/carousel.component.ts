@@ -1,6 +1,15 @@
 import {
-  Component, ViewChild, ElementRef, AfterViewInit, HostListener, Input, ChangeDetectionStrategy, ChangeDetectorRef, OnChanges, OnInit
+  Component,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+  HostListener,
+  Input,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  OnChanges
 } from '@angular/core';
+
 
 @Component({
   selector: 'app-carousel',
@@ -16,7 +25,7 @@ export class CarouselComponent implements AfterViewInit, OnChanges {
   @Input() timeMove = 500;
   @Input() pointColor = '#3f51b5';
 
-  @ViewChild('content') viewContent: ElementRef;
+  @ViewChild('content', {static: false}) viewContent: ElementRef;
 
   private readonly timingFunction = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
   private infoPointer: { id: number, check: boolean }[] = [];
