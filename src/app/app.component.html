@@ -117,4 +117,29 @@
   <p></p>
   <p></p>
 
+  <div class="description">
+    Attribute [autoplay]:
+    <input type="radio" name="autoplay" (click)="autoplay = 1" checked>True
+    <input type="radio" name="autoplay" (click)="autoplay = 0">False
+    <br>
+    Attribute [autoplaySpeed]:
+    <input type="radio" name="autoplaySpeed" (click)="autoplaySpeed = 1000">1000
+    <input type="radio" name="autoplaySpeed" (click)="autoplaySpeed = 2000" checked>2000
+    <input type="radio" name="autoplaySpeed" (click)="autoplaySpeed = 4000">4000
+  </div>
+
+  <div class="carousel">
+    <carousel [autoplay]="autoplay?true:false" [autoplaySpeed]="autoplaySpeed">
+      <div class="carousel__item carousel__item_turquoise">One</div>
+      <div class="carousel__item carousel__item_blue">Two</div>
+      <div class="carousel__item carousel__item_green">Three</div>
+      <div class="carousel__item carousel__item_yellow">Four</div>
+      <div class="carousel__item carousel__item_red">Five</div>
+    </carousel>
+  </div>
+
+  <p></p>
+  <p></p>
+  <p></p>
+
 </div>

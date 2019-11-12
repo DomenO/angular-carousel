@@ -9,6 +9,7 @@ import {
   ChangeDetectorRef,
   OnChanges
 } from '@angular/core';
+import { timer, Subscription } from 'rxjs';
 
 
 @Component({
@@ -18,12 +19,13 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CarouselComponent implements AfterViewInit, OnChanges {
-
   @Input() arrows: 'inside' | 'outside' | 'none' = 'outside';
   @Input() borderSwipe = 50;
   @Input() infinity = true;
   @Input() timeMove = 500;
   @Input() pointColor = '#3f51b5';
+  @Input() autoplay = false;
+  @Input() autoplaySpeed = 1000;
 
   @ViewChild('content', {static: false}) viewContent: ElementRef;
 
@@ -36,6 +38,8 @@ export class CarouselComponent implements AfterViewInit, OnChanges {
   private startMousePositionX: number;
   private startContentPositionX: number;
   private calmMove: boolean;
+  private autoplayTimer: Subscription;
+  private autoplayPause: boolean;
 
   constructor(private cd: ChangeDetectorRef) { }
 
@@ -62,6 +66,7 @@ export class CarouselComponent implements AfterViewInit, OnChanges {
 
   ngOnChanges() {
     this.cd.detectChanges();
+    this.startAutoplay();
   }
 
   onMouseDown(event: MouseEvent) {
@@ -74,6 +79,19 @@ export class CarouselComponent implements AfterViewInit, OnChanges {
 
     if (!this.startContentPositionX)
       this.startContentPositionX = 0;
+  }
+
+  @HostListener('mouseover', ['$event'])
+  @HostListener('touchstart', ['$event'])
+  onMouseOver(event: MouseEvent) {
+    this.autoplayPause = true;
+  }
+
+  @HostListener('mouseout', ['$event'])
+  @HostListener('touchend', ['$event'])
+  onMouseOut(event: MouseEvent) {
+    this.autoplayPause = false;
+    this.startAutoplay();
   }
 
   @HostListener('window:mousemove', ['$event'])
@@ -163,12 +181,12 @@ export class CarouselComponent implements AfterViewInit, OnChanges {
 
     this.content.style.left = pos + '%';
 
-    setTimeout(() => {
+    timer(this.timeMove).subscribe(() => {
       if (!arrow)
         this.checkNextElement(pos);
 
       this.finaly();
-    }, this.timeMove);
+    });
   }
 
   private finaly() {
@@ -176,7 +194,6 @@ export class CarouselComponent implements AfterViewInit, OnChanges {
     this.clearTransition();
 
     if (this.lastElement.style.left === '-100%') {
-
       const pos = ((this.content.children.length - 1) * 100) + '%';
       this.lastElement.style.left = pos;
 
@@ -197,6 +214,18 @@ export class CarouselComponent implements AfterViewInit, OnChanges {
 
     this.setInfoPointer(Math.abs(parseInt(this.content.style.left)) / 100);
     this.cd.detectChanges();
+
+    this.startAutoplay();
+  }
+
+  private startAutoplay() {
+    if (this.autoplayTimer)
+      this.autoplayTimer.unsubscribe();
+
+    if (this.autoplay)
+      this.autoplayTimer = timer(this.autoplaySpeed).subscribe(() =>
+        this.autoplay && !this.autoplayPause && this.arrowSwitchSlide(-1)
+      );
   }
 
   private setInfoPointer(id: number) {
@@ -234,5 +263,4 @@ export class CarouselComponent implements AfterViewInit, OnChanges {
     this.content.style.transition = 'none';
     this.calmMove = false;
   }
-
 }

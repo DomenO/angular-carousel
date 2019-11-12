@@ -11,4 +11,6 @@ export class AppComponent {
   infinity: number = 1;
   timeMove: number = 500;
   pointColor: string = '#3f51b5';
+  autoplay: boolean = true;
+  autoplaySpeed: number = 2000;
 }

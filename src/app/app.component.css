@@ -37,16 +37,16 @@
 }
 
 .content {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   width: 760px;
   margin: 0 auto;
 }
 
 .description {
-  margin: 0 auto;
-  line-height: 64px;
-  font-size: 18px;  
+  margin: 20px auto;
+  line-height: 32px;
+  font-size: 18px;
 }
 
 .header {
